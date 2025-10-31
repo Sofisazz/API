@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Учитываем, что мы в папке /3/
+RewriteBase /3/
+
+# Перенаправление всех запросов на index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
